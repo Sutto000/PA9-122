@@ -168,6 +168,23 @@ int main()
 						lowestScore = directionScores[k];
 					}
 				}
+				sf::Vector2f targetTile(100, 100);
+				sf::Vector2f distance = targetTile - ghosts[i].getPosition();
+				const float threshold = 5;
+				if (std::abs(distance.x) < threshold && std::abs(distance.y) < threshold)
+				{
+					// ghost has reached target position
+
+				}
+				/*
+				else 
+				{
+					// sprite has not yet reached target position, update its position
+					float speed = 1.0f; // adjust the speed of the sprite as needed
+					sf::Vector2f movement = distance / std::sqrt(distance.x * distance.x + distance.y * distance.y) * speed;
+					ghosts[i].move(movement);
+				}
+				*/
 				//If up is best move
 				if (upScore == lowestScore)
 				{
